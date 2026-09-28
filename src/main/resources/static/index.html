@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VM Resource Recommender</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>VM Resource Recommender</h1>
+
+    <p class="subtitle">
+        Enter your workload details to find a suitable VM configuration.
+    </p>
+
+    <div class="form-card">
+
+        <label>Workload Type</label>
+        <select id="workloadType">
+            <option value="Web Application">Web Application</option>
+            <option value="Database">Database</option>
+            <option value="Development">Development</option>
+            <option value="Data Processing">Data Processing</option>
+        </select>
+
+        <label>Expected Number of Users</label>
+        <input type="number"
+               id="numberOfUsers"
+               min="1"
+               placeholder="Example: 500">
+
+        <label>Workload Intensity</label>
+        <select id="workloadIntensity">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+
+        <label>Database Required?</label>
+        <select id="databaseRequired">
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+        </select>
+
+        <label>Required Storage (GB)</label>
+        <input type="number"
+               id="storageRequired"
+               min="1"
+               placeholder="Example: 80">
+
+        <button onclick="recommendVM()">
+            Recommend VM
+        </button>
+
+    </div>
+
+
+    <!-- RESULT -->
+    <div id="result" class="result-card hidden">
+
+        <h2>Recommended VM Configuration</h2>
+
+        <div class="resources">
+
+            <div class="resource">
+                <span id="cpu">-</span>
+                <p>vCPU</p>
+            </div>
+
+            <div class="resource">
+                <span id="ram">-</span>
+                <p>GB RAM</p>
+            </div>
+
+            <div class="resource">
+                <span id="storage">-</span>
+                <p>GB Storage</p>
+            </div>
+
+        </div>
+
+        <h3 id="category"></h3>
+
+
+        <!-- AZURE SECTION -->
+        <div class="azure-section">
+
+            <h2>Azure VM Recommendation</h2>
+
+            <div class="azure-details">
+
+                <div>
+                    <p>Azure VM</p>
+                    <strong id="azureVm">-</strong>
+                </div>
+
+                <div>
+                    <p>Azure Configuration</p>
+                    <strong id="azureConfig">-</strong>
+                </div>
+
+                <div>
+                    <p>Region</p>
+                    <strong id="azureRegion">-</strong>
+                </div>
+
+            </div>
+
+
+            <div class="price-box">
+
+                <div>
+                    <p>Hourly Compute Cost</p>
+                    <strong id="hourlyPrice">-</strong>
+                </div>
+
+                <div>
+                    <p>Estimated Monthly Compute Cost</p>
+                    <strong id="monthlyPrice">-</strong>
+                </div>
+
+            </div>
+
+            <p class="price-note">
+                * Monthly estimate assumes approximately 730 hours
+                of VM usage. Storage and other Azure services may
+                have separate charges.
+            </p>
+
+        </div>
+
+
+        <!-- REASON -->
+        <div class="reason-box">
+
+            <strong>Why this configuration?</strong>
+
+            <p id="reason"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

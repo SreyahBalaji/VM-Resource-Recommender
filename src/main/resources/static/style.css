@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+.container {
+    width: 90%;
+    max-width: 720px;
+    margin: 40px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+.form-card,
+.result-card {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+label {
+    display: block;
+    margin-top: 17px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-card h2 {
+    text-align: center;
+}
+
+.resources {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.resource {
+    flex: 1;
+    background: #f8fafc;
+    padding: 18px 8px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.resource span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.resource p {
+    margin: 6px 0 0;
+    color: #6b7280;
+}
+
+#category {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.reason-box {
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.reason-box p {
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+@media (max-width: 550px) {
+    .resources {
+        flex-direction: column;
+    }
+}
+.azure-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.azure-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.azure-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.azure-details div {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.azure-details p,
+.price-box p {
+    color: #6b7280;
+    font-size: 13px;
+    margin-top: 0;
+}
+
+.price-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.price-box div {
+    padding: 17px;
+    background: #f8fafc;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.price-note {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+
+    .azure-details,
+    .price-box {
+        grid-template-columns: 1fr;
+    }
+}
